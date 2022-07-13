@@ -18,7 +18,7 @@ public class ClassScore {
                 System.out.println("합격!");
             else
                 System.out.println("불합격");
-        }else 
+        }else
             System.out.println("불합격");
     }
 }
