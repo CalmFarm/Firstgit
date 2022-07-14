@@ -3,8 +3,8 @@ import java.util.*;
 public class Practice {
 
 	public static void main(String[] args) {
-		Scanner a = new Scanner(System.in); 
-		
+		Scanner a = new Scanner(System.in);
+	
 		System.out.println("숫자를 입력해 주세요.");
 		int b = 0;
 		b = a.nextInt();
