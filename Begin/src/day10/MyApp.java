@@ -5,8 +5,8 @@ import java.awt.*;
 public class MyApp extends JFrame {
 	JPanel p=new JPanel();
 	JButton [] bt=new JButton[4];
-	
-	JTextArea ta;
+	JTextArea ta=new JTextArea(10,10);
+	JScrollPane sp= new JScrollPane(ta);
 
 	public MyApp() {
 		super("MyApp");
@@ -26,9 +26,7 @@ public class MyApp extends JFrame {
 		p.add(bt[1], "North");
 		p.add(bt[2], "North");
 		p.add(bt[3], "North");
-		
-		ta = new JTextArea(8,8);
-		JScrollPane sp=new JScrollPane(ta);
+
 		p.add(sp,BorderLayout.CENTER);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
