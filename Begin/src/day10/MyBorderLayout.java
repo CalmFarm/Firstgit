@@ -19,7 +19,7 @@ public class MyBorderLayout extends JFrame{
 		p.add(bt[1], "South");
 		p.add(bt[2], "West");
 		p.add(bt[3], "East");
-		p.add(bt[4], "Center");
+		p.add(bt[4]);
 		//영역을 지정하지 않으면 "Center"가 디폴트값
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
