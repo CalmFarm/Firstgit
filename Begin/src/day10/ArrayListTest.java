@@ -40,7 +40,9 @@ public class ArrayListTest {
 		}
 		
 		//Collection.sort() 메소드를 이용해서 정렬
-		Collections.sort(arrList2);
+		Collections.sort(arrList2);//오름차순
+		//Collections.sort(arrList2, Collection.reverseOrder());
+		// 	ㄴ 내림차순
 		System.out.println("정렬 이후 ~~!~~");
 		for(Integer val : arrList2) {
 			System.out.println(val);
