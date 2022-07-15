@@ -1,5 +1,7 @@
 # Firstgit
 Firstgit Test !
+
+Java bin
  
 연습 중
 
