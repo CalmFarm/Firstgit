@@ -94,13 +94,13 @@ public class Play {
 				
 				playerDeck.moveAlltoDeck(playingDeck);
 				dealerDeck.moveAlltoDeck(playingDeck);
-				System.out.println("End of Hand.");
+				System.out.println("End of Hand");
 				
 				
 			}
 		}
 		
-		System.out.println("Game Over ! Join in the money!");
+		System.out.println("Game Over ! Join in the money");
 		
 	}
 

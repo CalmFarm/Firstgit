@@ -104,7 +104,6 @@ public class Deck {
 				totalvalue +=11;
 			}
 		}
-		
 		return totalvalue;
 	}
 	
