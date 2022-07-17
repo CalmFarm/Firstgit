@@ -27,6 +27,7 @@ public class MyApp extends JFrame {
 		p.add(bt[2], "NORTH");
 		p.add(bt[3], "NORTH");
 		p.add(sp,BorderLayout.CENTER);
+		//창 크크기가 작으면 센터에 가지않음 question
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
