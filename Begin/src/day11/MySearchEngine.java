@@ -49,7 +49,7 @@ public class MySearchEngine extends JFrame{
 			}else if(obj==bt3) {
 				bt3.setBackground(Color.orange);
 			}else if(obj==bt4) {
-				bt4.setBackground(Color.black);
+				bt4.setBackground(Color.red);
 			}
 		}
 	}
