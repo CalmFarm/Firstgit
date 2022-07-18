@@ -5,7 +5,7 @@ import java.awt.*;
 public class MyApp extends JFrame {
 	JPanel p=new JPanel();
 	JButton [] bt=new JButton[4];
-	JTextArea ta=new JTextArea(48,48);
+	JTextArea ta=new JTextArea(10,10);
 	JScrollPane sp= new JScrollPane(ta);
 
 	public MyApp() {
@@ -27,7 +27,7 @@ public class MyApp extends JFrame {
 		p.add(bt[2], "NORTH");
 		p.add(bt[3], "NORTH");
 		p.add(sp,BorderLayout.CENTER);
-		//창 크크기가 작으면 센터에 가지않음 question
+		//창 크크기가 작으면 센터에 가지않음 Q?
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
