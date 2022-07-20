@@ -1,8 +1,8 @@
 package day12;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 
 public class PongApp extends JFrame{
 	
@@ -79,6 +79,22 @@ public class PongApp extends JFrame{
 				}
 			}else if(obj==btSave) {
 				//setTitle("save");
+				String content=ta.getText();
+				if(content.trim().isEmpty()) { //내용이없다면
+					JOptionPane.showMessageDialog(p,"저장할 내용이 없습니다.");
+					return;
+				}
+				//내용이 있다면
+				String fileName="C:/myjava/PongList.txt";
+				try {
+					FileWriter fw=new FileWriter(fileName);
+					fw.write(content);
+					fw.flush();
+					fw.close();
+					setTitle(fileName+"에 저장완료");
+				}catch (IOException ex) {
+					setTitle("파일 쓰기 중 에러 : "+ex.getMessage());
+				}
 				
 			}
 		}
