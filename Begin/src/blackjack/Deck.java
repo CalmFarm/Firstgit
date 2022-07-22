@@ -107,19 +107,6 @@ public class Deck {
 		}
 		return totalValue;
 		
-		
-		
-		
-		
-		
-		
-		
 	}
-	
-	
-	
-	
-	
-	
 	
 }
