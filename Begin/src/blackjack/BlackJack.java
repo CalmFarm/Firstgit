@@ -1,15 +1,41 @@
 package blackjack;
-
+/**
+ * @FileName : blckjack.java
+ * @Project : BlackJack
+ * @Date : 2022.07.20 
+ * @author khs
+ * @Description :
+ *  ===========================================================
+ * DATE              AUTHOR             NOTE
+ * -----------------------------------------------------------
+ * 2022.07.20        khs                 최초 생성
+ * 2022.07.22        sungwook park       예외 클래스 추가
+ * 2022.07.23        khs                 abstract 클래스 추가
+ */
 import java.util.Scanner;
 
+/**
+ * @author khs
+ * @Description : 추상크래스 선언
+ * 
+ */
 abstract class Welcome{
+
 	public void msg() {
 		emo();
 	}
 	
+	/**
+	 * 멤버 메소드 중 추상 메소드 선언 
+	 */
 	abstract public void emo();
 }
 
+/**
+ * @author khs
+ * @Description : Welcome 메소드를 상속 받는 클래스 선언 
+ * 
+ */
 class Hello extends Welcome{
 	@Override
 	public void emo() {
@@ -32,9 +58,16 @@ class Hello extends Welcome{
 				+ "MMMMMMMMMMMMMMMNXNWMMMMMMMMMMMMMMMMMMMMMMMMMMWNWMMMMMMMMMMMMMMMMMMMMMMMN0OOOOOO0NMMMMMMMMMMMMMMMMMMMMMMNKNMMMMMMMMMMMMMM");
 	}
 }
+
+/**
+ * @author khs
+ * @Description : 블랙잭을 실행하는 클래스
+ * 
+ */
 public class BlackJack {
+
 	public static void main(String[] args) {
-		
+		//입장문
 		Hello a=new Hello();
 		a.emo();
 		
@@ -84,12 +117,12 @@ public class BlackJack {
 				System.out.println("1.Hit 또는 2.Stay ");
 				int response = userInput.nextInt();	
 				
-				//they hit
+				//Hit 한 경우
 				if(response == 1) {
 					playerDeck.draw(playingDeck);
 					System.out.println("당신이 뽑은 카드는 : "+playingDeck.getCard(playerDeck.deckSize()-1).toString());
 					
-					//bust if > 21
+					//Hit 후 Bust
 					if(playerDeck.cardsValue() > 21) {
 						System.out.println("버스트 되었습니다!! 숫자의 합 : "+playerDeck.cardsValue()+"\n");
 						playerMoney -= playerBet;
@@ -102,37 +135,42 @@ public class BlackJack {
 				}
 			}
 			
-			//reveal dealer cards
+			//딜러의 카드 공개 딜러의 승리 
 			System.out.println("딜러의 카드는 : "+dealerDeck.toString()+" 입니다");
 			if((dealerDeck.cardsValue()>playerDeck.cardsValue()) && endRound ==false ) {
 				System.out.println("딜러가 당신을 이겼습니다!");
 				playerMoney -= playerBet;
 				endRound = true;
 			}
-			//Dealer Draw at 16 , stand at17
+			//딜러가 드로우16, 스탠드17
 			while((dealerDeck.cardsValue()<17) && endRound == false) {
 				dealerDeck.draw(playingDeck);
 				System.out.println("딜러가 뽑은 카드는 "+dealerDeck.getCard(dealerDeck.deckSize()-1).toString()+"이었습니다");
 			}
-			//display total value for dealer
+			//딜러의 밸류를 공개
 			System.out.println("\n딜러카드 숫자의 합은 "+dealerDeck.cardsValue()+"입니다");
-			//if dealer bust
+			//딜러가 버스트 했을경우
 			if((dealerDeck.cardsValue()>21)&& endRound ==false) {
 				System.out.println("\n☆★딜러 버스트! 당신이 승리하였습니다★☆");
 				playerMoney += playerBet;
 				endRound = true;
-			}
+			}//무승부인 경우
 			if((playerDeck.cardsValue()== dealerDeck.cardsValue()) && endRound ==false) {
 				System.out.println("무승부입니다!! 다음 게임을 진행해주세요");
 				endRound = true;
 			}
-			
+			//플레이어 승리시
 			if((playerDeck.cardsValue() > dealerDeck.cardsValue())&& endRound == false) {
 				System.out.println("☆★당신이 승리하였습니다!!!★☆");
 				playerMoney += playerBet;
 				endRound = true;
+			}//딜러 승리시
+			if((dealerDeck.cardsValue() > playerDeck.cardsValue())&& endRound == false) {
+				System.out.println("☆★딜러가 승리하였습니다!!!★☆");
+				playerMoney -= playerBet;
+				endRound = true;
 			}
-			
+			//플레이어와 딜러의 카드 덱으로 이동
 			playerDeck.moveAllToDeck(playingDeck);
 			dealerDeck.moveAllToDeck(playingDeck);
 			System.out.println("------------------");

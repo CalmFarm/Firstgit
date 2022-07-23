@@ -1,23 +1,43 @@
 package blackjack;
 import java.util.*;
 
+/**
+ * @author khs
+ * @Description : 
+ * 
+ */
 public class Deck {
 	
+	/**
+	 * @author khs
+	 * @Date : 2022. 7. 23.
+	 * @Description 카드들을 배열에 저장
+	 * 
+	 */
 	private ArrayList<Card> cards;
 	
+	/**
+	 * 생성자 : 카드를 덱에 저장
+	 */
 	public Deck() {
 		this.cards=new ArrayList<Card>();
 	}
 
+	/**
+	 * 카드를 뽑고 섞는 메서드
+	 */
 	public void creatFullDeck() {
 		for(Suit cardSuit: Suit.values()) {
 			for(Value cardValue : Value.values()) {
-				//add new card mix
+				//카드를 뽑고 섞기
 				this.cards.add(new Card(cardSuit,cardValue));
 			}
 		}
 	}
 	
+	/**
+	 * 카드를 섞고 랜덤으로 고르는 메서드
+	 */
 	public void shuffle() {
 		ArrayList<Card> tmpDeck=new ArrayList<Card>();
 		
@@ -43,26 +63,51 @@ public class Deck {
 		return cardListOutput;
 	}
 	
+	/**
+	 * 선택된 카드 제거 메서드
+	 * @param i
+	 */
 	public void removeCard(int i) {
 		this.cards.remove(i);
 	}
+	/**
+	 * 선택된 카드를 얻는 메서드
+	 * @param i
+	 * @return
+	 */
 	public Card getCard(int i) {
 		return this.cards.get(i);
 	}
+	/**
+	 * 카드를 추가하는 메서드
+	 * @param addCard
+	 */
 	public void addCard(Card addCard) {
 		this.cards.add(addCard);
 	}
 	
-	//draws from deck
+	
+	/**
+	 * 덱으로부터 드로우하는 메서드
+	 * @param comingFrom
+	 */
 	public void draw(Deck comingFrom) {
 		this.cards.add(comingFrom.getCard(0));
 		comingFrom.removeCard(0);
 	}
 	
+	/**
+	 * 덱 사이즈 메서드 
+	 * @return
+	 */
 	public int deckSize() {
 		return this.cards.size();
 	}
 	
+	/**
+	 * 모든 카드를 덱으로 옮기는 메서드
+	 * @param moveTo
+	 */
 	public void moveAllToDeck(Deck moveTo) {
 		int thisDeckSize = this.cards.size();
 		
@@ -76,6 +121,10 @@ public class Deck {
 	}
 	
 	
+	/**
+	 * 카드의 가치를 매기는 메서드
+	 * @return
+	 */
 	public int cardsValue() {
 		int totalValue =0;
 		int aces = 0 ;
