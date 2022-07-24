@@ -61,8 +61,6 @@ class Hello extends Welcome{
 
 /**
  * @author khs
- * @Description : 블랙잭을 실행하는 클래스
- * 
  */
 public class BlackJack {
 

@@ -1,11 +1,7 @@
 package blackjack;
 import java.util.*;
 
-/**
- * @author khs
- * @Description : 
- * 
- */
+
 public class Deck {
 	
 	/**
@@ -63,51 +59,32 @@ public class Deck {
 		return cardListOutput;
 	}
 	
-	/**
-	 * 선택된 카드 제거 메서드
-	 * @param i
-	 */
+
 	public void removeCard(int i) {
 		this.cards.remove(i);
 	}
-	/**
-	 * 선택된 카드를 얻는 메서드
-	 * @param i
-	 * @return
-	 */
+
 	public Card getCard(int i) {
 		return this.cards.get(i);
 	}
-	/**
-	 * 카드를 추가하는 메서드
-	 * @param addCard
-	 */
+
 	public void addCard(Card addCard) {
 		this.cards.add(addCard);
 	}
 	
 	
-	/**
-	 * 덱으로부터 드로우하는 메서드
-	 * @param comingFrom
-	 */
+
 	public void draw(Deck comingFrom) {
 		this.cards.add(comingFrom.getCard(0));
 		comingFrom.removeCard(0);
 	}
 	
-	/**
-	 * 덱 사이즈 메서드 
-	 * @return
-	 */
+
 	public int deckSize() {
 		return this.cards.size();
 	}
 	
-	/**
-	 * 모든 카드를 덱으로 옮기는 메서드
-	 * @param moveTo
-	 */
+	
 	public void moveAllToDeck(Deck moveTo) {
 		int thisDeckSize = this.cards.size();
 		
@@ -121,10 +98,7 @@ public class Deck {
 	}
 	
 	
-	/**
-	 * 카드의 가치를 매기는 메서드
-	 * @return
-	 */
+	
 	public int cardsValue() {
 		int totalValue =0;
 		int aces = 0 ;
