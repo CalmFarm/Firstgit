@@ -2,6 +2,11 @@ package blackjack;
 import java.util.*;
 
 
+/**
+ * @author khs
+ * Deck 클래스
+ * 
+ */
 public class Deck {
 	
 	/**
@@ -51,6 +56,7 @@ public class Deck {
 	}
 	
 	
+
 	public String toString() {
 		String cardListOutput = "";
 		for(Card aCard : this.cards) {
@@ -60,13 +66,16 @@ public class Deck {
 	}
 	
 
+	
 	public void removeCard(int i) {
 		this.cards.remove(i);
 	}
 
+
 	public Card getCard(int i) {
 		return this.cards.get(i);
 	}
+
 
 	public void addCard(Card addCard) {
 		this.cards.add(addCard);
@@ -80,11 +89,13 @@ public class Deck {
 	}
 	
 
+
 	public int deckSize() {
 		return this.cards.size();
 	}
 	
 	
+
 	public void moveAllToDeck(Deck moveTo) {
 		int thisDeckSize = this.cards.size();
 		
@@ -98,7 +109,7 @@ public class Deck {
 	}
 	
 	
-	
+
 	public int cardsValue() {
 		int totalValue =0;
 		int aces = 0 ;

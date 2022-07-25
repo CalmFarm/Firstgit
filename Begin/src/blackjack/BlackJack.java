@@ -36,6 +36,7 @@ abstract class Welcome{
  * @Description : Welcome 메소드를 상속 받는 클래스 선언 
  * 
  */
+
 class Hello extends Welcome{
 	@Override
 	public void emo() {
@@ -59,12 +60,16 @@ class Hello extends Welcome{
 	}
 }
 
+
 /**
  * @author khs
+ * 
+ * 
  */
 public class BlackJack {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SmallMoneyException
+{
 		//입장문
 		Hello a=new Hello();
 		a.emo();
@@ -87,10 +92,15 @@ public class BlackJack {
 		while(playerMoney >0) {
 			System.out.println("당신이 가진 돈은 "+playerMoney+"원 입니다. 베팅하실 금액을 적어주세요.");
 			int playerBet=userInput.nextInt();
-			if(playerBet > playerMoney) {
-				System.out.println("가진 돈보다 더 많이 베팅할 수 없습니다.");
-				break;
-			}
+			try {
+				if(playerBet > playerMoney) {
+					throw new SmallMoneyException((playerBet-playerMoney)+"원 만큼 부족합니다.");
+				}
+			}catch(SmallMoneyException se) {
+					System.out.println(se.getMessage());
+					continue;
+				}
+			
 			
 			boolean endRound=false;
 			
