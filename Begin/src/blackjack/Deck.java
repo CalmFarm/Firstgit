@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * @author khs
- * Deck 클래스
+ * Deck 카드의 덱을 가지는 클래스
  * 
  */
 public class Deck {

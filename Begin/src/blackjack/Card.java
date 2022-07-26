@@ -3,6 +3,7 @@ package blackjack;
 /**
  * @author khs
  * 카드의 정보들을 캡슐화
+ * 카드의 문양과 가치 메소드
  * 
  */
 public class Card {

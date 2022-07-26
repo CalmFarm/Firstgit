@@ -63,8 +63,7 @@ class Hello extends Welcome{
 
 /**
  * @author khs
- * 
- * 
+ * 블랙잭 게임 애플리케이션
  */
 public class BlackJack {
 
