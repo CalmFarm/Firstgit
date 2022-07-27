@@ -173,7 +173,7 @@ public class BlackJack {
 				endRound = true;
 			}//딜러 승리시
 			if((dealerDeck.cardsValue() > playerDeck.cardsValue())&& endRound == false) {
-				System.out.println("☆★딜러가 승리하였습니다!!!★☆");
+				System.out.println("딜러가 승리하였습니다");
 				playerMoney -= playerBet;
 				endRound = true;
 			}

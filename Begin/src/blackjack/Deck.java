@@ -65,24 +65,35 @@ public class Deck {
 		return cardListOutput;
 	}
 	
-
-	
+	/**
+	 * 카드를 삭제 하는 메서드
+	 * @param i cards배열에서 삭제하는 변수 
+	 * */
 	public void removeCard(int i) {
 		this.cards.remove(i);
 	}
 
 
-	public Card getCard(int i) {
-		return this.cards.get(i);
+
+	public Card getCard(int j) {
+		return this.cards.get(j);
 	}
 
 
+	/**
+	 * 카드를 얻는 메서드
+	 * @param addCard Card클래스에 추가하는 변수
+	 */
 	public void addCard(Card addCard) {
 		this.cards.add(addCard);
 	}
 	
 	
 
+	/**
+	 * 메소드에 대한 설명을 입력해주세요. 
+	 * @param comingFrom 덱에서 카드를 드로우 하는 변수
+	 */
 	public void draw(Deck comingFrom) {
 		this.cards.add(comingFrom.getCard(0));
 		comingFrom.removeCard(0);
@@ -96,6 +107,10 @@ public class Deck {
 	
 	
 
+	/**
+	 * 게임이 한턴 종료되면 모든 카드를 덱으로 옮기는 메서드 
+	 * @param moveTo 카드를 덱으로 옮기는 변수
+	 */
 	public void moveAllToDeck(Deck moveTo) {
 		int thisDeckSize = this.cards.size();
 		
