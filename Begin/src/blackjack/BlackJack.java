@@ -127,7 +127,7 @@ public class BlackJack {
 				//Hit 한 경우
 				if(response == 1) {
 					playerDeck.draw(playingDeck);
-					System.out.println("당신이 뽑은 카드는 : "+playingDeck.getCard(playerDeck.deckSize()-1).toString());
+					System.out.println("당신이 뽑은 카드는 : "+playerDeck.getCard(playerDeck.deckSize()-1).toString());
 					
 					//Hit 후 Bust
 					if(playerDeck.cardsValue() > 21) {
