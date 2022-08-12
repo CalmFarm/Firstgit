@@ -83,7 +83,7 @@ public class BlackJack {
 		
 		Deck dealerDeck =new Deck();
 		
-		int playerMoney = 100;
+		int playerMoney = 1000;
 		
 		Scanner userInput =new Scanner(System.in);
 		
